@@ -1,4 +1,5 @@
 package calculator;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -22,6 +23,7 @@ public class Calculator {
 	boolean operator = false;
 	boolean onOff = false;
 	boolean equalUse = false;
+	boolean operatorUse = false;
 	int operate = 0;
 	String resultFormat;
 
@@ -93,6 +95,16 @@ public class Calculator {
 		if (operator) {
 			lblDisplayResult.setText("");
 			operator = !operator;
+		}
+	}
+	
+	
+	/**
+	 * used to reinit sign if user click on several following sign 
+	 */
+	public void ReinitOperatorUse() {
+		if (operatorUse) {
+			operatorUse = !operatorUse;
 		}
 	}
 
@@ -170,6 +182,7 @@ public class Calculator {
 					deleteErrorMessage();
 					reinitEqual();
 					ReinitDisplayNumber();
+					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 
 					// to print only one 0
@@ -194,6 +207,7 @@ public class Calculator {
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
+					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "1");
 					dResult = Double.parseDouble(lblDisplayResult.getText());
@@ -212,6 +226,7 @@ public class Calculator {
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
+					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "2");
 					dResult = Double.parseDouble(lblDisplayResult.getText());
@@ -230,6 +245,7 @@ public class Calculator {
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
+					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "3");
 					dResult = Double.parseDouble(lblDisplayResult.getText());
@@ -248,6 +264,7 @@ public class Calculator {
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
+					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "4");
 					dResult = Double.parseDouble(lblDisplayResult.getText());
@@ -266,6 +283,7 @@ public class Calculator {
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
+					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "5");
 					dResult = Double.parseDouble(lblDisplayResult.getText());
@@ -284,6 +302,7 @@ public class Calculator {
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
+					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "6");
 					dResult = Double.parseDouble(lblDisplayResult.getText());
@@ -302,6 +321,7 @@ public class Calculator {
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
+					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "7");
 					dResult = Double.parseDouble(lblDisplayResult.getText());
@@ -320,6 +340,7 @@ public class Calculator {
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
+					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "8");
 					dResult = Double.parseDouble(lblDisplayResult.getText());
@@ -338,6 +359,7 @@ public class Calculator {
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
+					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "9");
 					dResult = Double.parseDouble(lblDisplayResult.getText());
@@ -393,14 +415,14 @@ public class Calculator {
 					if (equalUse) {
 						operate = 0;
 					}
-
-					calculTwoOperande(operate, Double.parseDouble(lblDisplayResult.getText()));
+					if (operatorUse == false) {
+						calculTwoOperande(operate, Double.parseDouble(lblDisplayResult.getText()));
+					}
+					
 					operate = 1;
-
 					operator = true;
-
+					operatorUse = true;
 					lbDisplaySign.setText("+");
-
 				}
 			}
 		});
@@ -416,11 +438,12 @@ public class Calculator {
 					if (equalUse) {
 						operate = 0;
 					}
-
-					calculTwoOperande(operate, Double.parseDouble(lblDisplayResult.getText()));
+					if (operatorUse == false) {
+						calculTwoOperande(operate, Double.parseDouble(lblDisplayResult.getText()));
+					}
 					operate = 2;
 					operator = true;
-
+					operatorUse = true;
 					lbDisplaySign.setText("-");
 
 				}
@@ -438,11 +461,14 @@ public class Calculator {
 					if (equalUse) {
 						operate = 0;
 					}
-					calculTwoOperande(operate, Double.parseDouble(lblDisplayResult.getText()));
+					if (operatorUse == false) {
+						calculTwoOperande(operate, Double.parseDouble(lblDisplayResult.getText()));
+					}
 					operate = 3;
 					operator = true;
-
+					operatorUse = true;
 					lbDisplaySign.setText("x");
+					
 				}
 			}
 		});
@@ -458,10 +484,12 @@ public class Calculator {
 					if (equalUse) {
 						operate = 0;
 					}
-					calculTwoOperande(operate, Double.parseDouble(lblDisplayResult.getText()));
+					if (operatorUse == false) {
+						calculTwoOperande(operate, Double.parseDouble(lblDisplayResult.getText()));
+					}
 					operate = 4;
 					operator = true;
-
+					operatorUse = true;
 					lbDisplaySign.setText("\u00F7");
 
 				}
@@ -516,13 +544,11 @@ public class Calculator {
 				if (onOff) {
 					if (equalUse == false) {
 						calculTwoOperande(operate, Double.parseDouble(lblDisplayResult.getText()));
-						// operate = 0;
 						operator = true;
 						equalUse = true;
 
 					} else {
 						calculTwoOperande(operate, dResult);
-						// equalUse =!equalUse;
 					}
 				}
 			}
