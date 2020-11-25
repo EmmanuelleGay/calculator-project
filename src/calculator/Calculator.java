@@ -47,7 +47,14 @@ public class Calculator {
 		});
 
 	}
-	/*-----------------------------------------------CALCULATE_METHOD--------------------------*/
+	/*-----------------------------------------------CALCULATE_METHOD-------------------------------*/
+
+	/**
+	 * make the differents operations function of operator
+	 * 
+	 * @param operate
+	 * @param d
+	 */
 
 	public void calculTwoOperande(int operate, double d) {
 
@@ -78,12 +85,11 @@ public class Calculator {
 	}
 
 	/**
-	 * used to be able to play operation after use =
+	 * used to be able to play operation after use equals
 	 */
 
 	public void reinitEqual() {
 		if (equalUse) {
-			lblDisplayResult.setText("");
 			equalUse = !equalUse;
 		}
 	}
@@ -97,10 +103,9 @@ public class Calculator {
 			operator = !operator;
 		}
 	}
-	
-	
+
 	/**
-	 * used to reinit sign if user click on several following sign 
+	 * used to reinit sign if user click on several following sign
 	 */
 	public void ReinitOperatorUse() {
 		if (operatorUse) {
@@ -191,7 +196,7 @@ public class Calculator {
 					} else {
 						lblDisplayResult.setText(lblDisplayResult.getText() + "0");
 					}
-					dResult = Double.parseDouble(lblDisplayResult.getText());
+					
 				}
 			}
 		});
@@ -204,13 +209,16 @@ public class Calculator {
 		btnNumberOne.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (onOff) {
+					if (equalUse) {
+						dNumber = 0;
+					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "1");
-					dResult = Double.parseDouble(lblDisplayResult.getText());
+				//	dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -223,13 +231,16 @@ public class Calculator {
 		btnNumberTwo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (onOff) {
+					if (equalUse) {
+						dNumber = 0;
+					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "2");
-					dResult = Double.parseDouble(lblDisplayResult.getText());
+				//	dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -242,13 +253,16 @@ public class Calculator {
 		btnNumberThree.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (onOff) {
+					if (equalUse) {
+						dNumber = 0;
+					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "3");
-					dResult = Double.parseDouble(lblDisplayResult.getText());
+		//			dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -261,13 +275,16 @@ public class Calculator {
 		btnNumberFour.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (onOff) {
+					if (equalUse) {
+						dNumber = 0;
+					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "4");
-					dResult = Double.parseDouble(lblDisplayResult.getText());
+		//			dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -280,13 +297,16 @@ public class Calculator {
 		btnNumberFive.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (onOff) {
+					if (equalUse) {
+						dNumber = 0;
+					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "5");
-					dResult = Double.parseDouble(lblDisplayResult.getText());
+		//			dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -299,13 +319,16 @@ public class Calculator {
 		btnNumberSix.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (onOff) {
+					if (equalUse) {
+						dNumber = 0;
+					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "6");
-					dResult = Double.parseDouble(lblDisplayResult.getText());
+		//			dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -318,13 +341,16 @@ public class Calculator {
 		btnNumberSeven.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (onOff) {
+					if (equalUse) {
+						dNumber = 0;
+					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "7");
-					dResult = Double.parseDouble(lblDisplayResult.getText());
+	//				dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -337,13 +363,16 @@ public class Calculator {
 		btnNumberHeight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (onOff) {
+					if (equalUse) {
+						dNumber = 0;
+					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "8");
-					dResult = Double.parseDouble(lblDisplayResult.getText());
+	//				dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -356,13 +385,16 @@ public class Calculator {
 		btnNumberNine.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (onOff) {
+					if (equalUse) {
+						dNumber = 0;
+					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
 					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "9");
-					dResult = Double.parseDouble(lblDisplayResult.getText());
+		//			dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -415,10 +447,11 @@ public class Calculator {
 					if (equalUse) {
 						operate = 0;
 					}
+					reinitEqual();
 					if (operatorUse == false) {
 						calculTwoOperande(operate, Double.parseDouble(lblDisplayResult.getText()));
 					}
-					
+
 					operate = 1;
 					operator = true;
 					operatorUse = true;
@@ -435,9 +468,12 @@ public class Calculator {
 		btnSubstract.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (onOff) {
+					deleteErrorMessage();
 					if (equalUse) {
 						operate = 0;
 					}
+					reinitEqual();
+	
 					if (operatorUse == false) {
 						calculTwoOperande(operate, Double.parseDouble(lblDisplayResult.getText()));
 					}
@@ -458,9 +494,11 @@ public class Calculator {
 		BtnMultiply.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (onOff) {
+					deleteErrorMessage();
 					if (equalUse) {
 						operate = 0;
 					}
+					reinitEqual();
 					if (operatorUse == false) {
 						calculTwoOperande(operate, Double.parseDouble(lblDisplayResult.getText()));
 					}
@@ -468,7 +506,7 @@ public class Calculator {
 					operator = true;
 					operatorUse = true;
 					lbDisplaySign.setText("x");
-					
+
 				}
 			}
 		});
@@ -481,9 +519,11 @@ public class Calculator {
 		btnDivided.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (onOff) {
+					deleteErrorMessage();
 					if (equalUse) {
 						operate = 0;
 					}
+					reinitEqual();
 					if (operatorUse == false) {
 						calculTwoOperande(operate, Double.parseDouble(lblDisplayResult.getText()));
 					}
@@ -543,11 +583,15 @@ public class Calculator {
 			public void actionPerformed(ActionEvent arg0) {
 				if (onOff) {
 					if (equalUse == false) {
+						dResult = Double.parseDouble(lblDisplayResult.getText());
 						calculTwoOperande(operate, Double.parseDouble(lblDisplayResult.getText()));
 						operator = true;
 						equalUse = true;
+				//		dNumber=0;
 
 					} else {
+					
+						dNumber = Double.parseDouble(lblDisplayResult.getText());
 						calculTwoOperande(operate, dResult);
 					}
 				}
@@ -571,6 +615,7 @@ public class Calculator {
 				operate = 0;
 				operator = false;
 				equalUse = false;
+				operatorUse = false;
 				onOff = !onOff;
 
 				if (onOff) {
@@ -602,6 +647,9 @@ public class Calculator {
 		btnMemPlus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (onOff) {
+					if (equalUse) {
+						dNumber = 0;
+					}
 					dMemory += Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
@@ -615,6 +663,9 @@ public class Calculator {
 		btnMemMoins.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (onOff) {
+					if (equalUse) {
+						dNumber = 0;
+					}
 					dMemory -= Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
