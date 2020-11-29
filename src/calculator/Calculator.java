@@ -57,16 +57,14 @@ public class Calculator {
 	 */
 
 	public void calculTwoOperande(int operate, double d) {
-
+System.out.println("avant " + dNumber + " " + d);
 		switch (operate) {
 		case 0:
 			dNumber = d;
 			break;
-
 		case 1:
 			dNumber = dNumber + d;
 			break;
-
 		case 2:
 			dNumber = dNumber - d;
 			break;
@@ -81,7 +79,7 @@ public class Calculator {
 		}
 		resultFormat = formatNumber();
 		lblDisplayResult.setText(String.valueOf(resultFormat));
-
+		System.out.println("apres " + dNumber + " " + d);
 	}
 
 	/**
@@ -179,6 +177,7 @@ public class Calculator {
 
 		/*-------------------------------------------------BUTTON_NUMBER-----------------------------*/
 
+		// Number 0
 		JButton btnNumberZero = new JButton("0");
 		btnNumberZero.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -200,6 +199,8 @@ public class Calculator {
 				}
 			}
 		});
+		
+		// Number 1
 		btnNumberZero.setBackground(Color.LIGHT_GRAY);
 		btnNumberZero.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnNumberZero.setBounds(10, 299, 89, 60);
@@ -214,11 +215,9 @@ public class Calculator {
 					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
-					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "1");
-				//	dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -227,6 +226,7 @@ public class Calculator {
 		btnNumberOne.setBounds(10, 228, 89, 60);
 		button_container.add(btnNumberOne);
 
+		// Number 2
 		JButton btnNumberTwo = new JButton("2");
 		btnNumberTwo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -236,11 +236,9 @@ public class Calculator {
 					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
-					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "2");
-				//	dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -249,6 +247,7 @@ public class Calculator {
 		btnNumberTwo.setBounds(109, 228, 89, 60);
 		button_container.add(btnNumberTwo);
 
+		// Number 3
 		JButton btnNumberThree = new JButton("3");
 		btnNumberThree.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -258,11 +257,9 @@ public class Calculator {
 					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
-					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "3");
-		//			dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -271,6 +268,7 @@ public class Calculator {
 		btnNumberThree.setBounds(208, 228, 89, 60);
 		button_container.add(btnNumberThree);
 
+		// Number 4
 		JButton btnNumberFour = new JButton("4");
 		btnNumberFour.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -280,11 +278,9 @@ public class Calculator {
 					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
-					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "4");
-		//			dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -293,6 +289,7 @@ public class Calculator {
 		btnNumberFour.setBounds(10, 157, 89, 60);
 		button_container.add(btnNumberFour);
 
+		// Number 5
 		JButton btnNumberFive = new JButton("5");
 		btnNumberFive.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -302,11 +299,9 @@ public class Calculator {
 					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
-					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "5");
-		//			dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -315,6 +310,7 @@ public class Calculator {
 		btnNumberFive.setBounds(109, 157, 89, 60);
 		button_container.add(btnNumberFive);
 
+		// Number 6
 		JButton btnNumberSix = new JButton("6");
 		btnNumberSix.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -324,11 +320,9 @@ public class Calculator {
 					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
-					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "6");
-		//			dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -337,6 +331,7 @@ public class Calculator {
 		btnNumberSix.setBounds(208, 157, 89, 60);
 		button_container.add(btnNumberSix);
 
+		// Number 7
 		JButton btnNumberSeven = new JButton("7");
 		btnNumberSeven.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -346,11 +341,9 @@ public class Calculator {
 					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
-					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "7");
-	//				dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -359,6 +352,7 @@ public class Calculator {
 		btnNumberSeven.setBounds(10, 86, 89, 60);
 		button_container.add(btnNumberSeven);
 
+		// Number 8
 		JButton btnNumberHeight = new JButton("8");
 		btnNumberHeight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -368,11 +362,9 @@ public class Calculator {
 					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
-					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "8");
-	//				dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -381,6 +373,7 @@ public class Calculator {
 		btnNumberHeight.setBounds(109, 86, 89, 60);
 		button_container.add(btnNumberHeight);
 
+		// Number 9
 		JButton btnNumberNine = new JButton("9");
 		btnNumberNine.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -390,11 +383,9 @@ public class Calculator {
 					}
 					deleteErrorMessage();
 					ReinitDisplayNumber();
-					reinitEqual();
 					ReinitOperatorUse();
 					lbDisplaySign.setText("");
 					lblDisplayResult.setText(lblDisplayResult.getText() + "9");
-		//			dResult = Double.parseDouble(lblDisplayResult.getText());
 				}
 			}
 		});
@@ -403,6 +394,7 @@ public class Calculator {
 		btnNumberNine.setBounds(208, 86, 89, 60);
 		button_container.add(btnNumberNine);
 
+		// Coma button
 		JButton btnDecimal = new JButton(".");
 		btnDecimal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -423,6 +415,7 @@ public class Calculator {
 		btnDecimal.setBounds(109, 299, 89, 60);
 		button_container.add(btnDecimal);
 
+		// button change sign of number
 		JButton btnSignNumber = new JButton("+/-");
 		btnSignNumber.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -439,6 +432,7 @@ public class Calculator {
 
 		/*-----------------------------------OPERATIONS_BUTTONS------------------------------------*/
 
+		//Plus button
 		JButton BtnAdd = new JButton("+");
 		BtnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -464,6 +458,7 @@ public class Calculator {
 		BtnAdd.setBounds(307, 228, 89, 131);
 		button_container.add(BtnAdd);
 
+		//Minus button
 		JButton btnSubstract = new JButton("-");
 		btnSubstract.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -490,6 +485,7 @@ public class Calculator {
 		btnSubstract.setBounds(406, 228, 89, 60);
 		button_container.add(btnSubstract);
 
+		//Multiply button
 		JButton BtnMultiply = new JButton("x");
 		BtnMultiply.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -515,6 +511,7 @@ public class Calculator {
 		BtnMultiply.setBounds(307, 157, 89, 60);
 		button_container.add(BtnMultiply);
 
+		//Divided button
 		JButton btnDivided = new JButton("\u00F7");
 		btnDivided.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -540,6 +537,7 @@ public class Calculator {
 		btnDivided.setBounds(406, 157, 89, 60);
 		button_container.add(btnDivided);
 
+		//Percentage button
 		JButton BtnPercentage = new JButton("%");
 		BtnPercentage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -557,6 +555,7 @@ public class Calculator {
 		BtnPercentage.setBounds(307, 86, 89, 60);
 		button_container.add(BtnPercentage);
 
+		//Square root button
 		JButton btnSquareRoot = new JButton("\u221A");
 		btnSquareRoot.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -578,6 +577,7 @@ public class Calculator {
 		btnSquareRoot.setBounds(406, 86, 89, 60);
 		button_container.add(btnSquareRoot);
 
+		//Equal button
 		JButton btnSum = new JButton("=");
 		btnSum.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -604,6 +604,7 @@ public class Calculator {
 
 		/*--------------------------------------------------OTHERS_BUTTONS---------------------*/
 
+		//Switch On - Off button
 		JButton btnOn_Off = new JButton("ON-C");
 		btnOn_Off.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -630,6 +631,7 @@ public class Calculator {
 		btnOn_Off.setBounds(406, 19, 89, 60);
 		button_container.add(btnOn_Off);
 
+		//MRC button		
 		JButton btnMemory = new JButton("MRC");
 		btnMemory.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -643,6 +645,7 @@ public class Calculator {
 		btnMemory.setBounds(10, 19, 89, 60);
 		button_container.add(btnMemory);
 
+		//M+ button
 		JButton btnMemPlus = new JButton("M+");
 		btnMemPlus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -659,6 +662,7 @@ public class Calculator {
 		btnMemPlus.setBounds(109, 19, 89, 60);
 		button_container.add(btnMemPlus);
 
+		//M- button
 		JButton btnMemMoins = new JButton("M-");
 		btnMemMoins.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -675,6 +679,7 @@ public class Calculator {
 		btnMemMoins.setBounds(208, 19, 89, 60);
 		button_container.add(btnMemMoins);
 
+		//CE button
 		JButton btnReset = new JButton("CE");
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
